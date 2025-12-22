@@ -7,3 +7,6 @@ from .thermal_argumentation import (
 from .thermal_argumentation_scores import (
     augmentation_difference_score
 )
+
+from .synthetic_thermal import synthetic_thermal
+from .synthetic_thermal_scores import thermal_similarity_score
