@@ -14,3 +14,18 @@ from .wavelet import wavelet_denoise_thermal
 from .wavelet_scores import wavelet_composite_score
 
 from .temporal_average import total_temporal_average, recursive_temporal_average
+
+from .high_pass import (subtract_low_pass, convolve_with_kernel, apply_laplacian_detector, apply_sobel_xy_detectors)
+from .high_pass_scores import (
+    high_frequency_energy,
+    edge_strength,
+    edge_density,
+    calculate_low_pass_scores,
+    calculate_sharpen_scores,
+    calculate_laplacian_scores,
+    calculate_sobel_scores,
+    avg_score_subtract_low_pass,
+    avg_score_convolve_with_kernel,
+    avg_score_laplacian,
+    avg_score_sobel,
+)
