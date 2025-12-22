@@ -13,4 +13,4 @@ from .non_local_mean_scores import compute_nlm_score
 from .wavelet import wavelet_denoise_thermal
 from .wavelet_scores import wavelet_composite_score
 
-
+from .temporal_average import total_temporal_average, recursive_temporal_average
