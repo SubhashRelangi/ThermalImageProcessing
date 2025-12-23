@@ -316,10 +316,10 @@ def gradient_map(
             magnitude = cv.normalize(magnitude, None, 0, 255, cv.NORM_MINMAX)
 
         mag_u8 = np.clip(magnitude, 0, 255).astype(np.uint8)
-        out = cv.applyColorMap(mag_u8, colormap)
+        out_img = cv.applyColorMap(mag_u8, colormap)
 
         print(f"[gradient_map] Time: {time.time() - start_time:.6f}s")
-        return out
+        return out_img
 
     except Exception as e:
         raise RuntimeError(f"gradient_map failed: {e}")

@@ -281,9 +281,9 @@ def HighPassEdge(
     spatial = cv.idft(np.fft.fftshift(merged))
     mag = cv.magnitude(spatial[:, :, 0], spatial[:, :, 1])
 
-    out = cv.normalize(mag, None, 0, 255, cv.NORM_MINMAX)
-    out = np.clip(out, 0, 255).astype(np.uint8)
+    out_img = cv.normalize(mag, None, 0, 255, cv.NORM_MINMAX)
+    out_img = np.clip(out_img, 0, 255).astype(np.uint8)
 
     print(f"[HighPassEdge] Time: {time.time() - start_time:.6f}s")
-    return out
+    return out_img
 

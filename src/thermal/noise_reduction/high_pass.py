@@ -340,10 +340,10 @@ def apply_laplacian_detector(
         lap = cv.Laplacian(img_blur, ddepth=ddepth, ksize=ksize)
         lap_abs = np.abs(lap)
 
-        out = cv.normalize(lap_abs, None, 0, 255, cv.NORM_MINMAX).astype(np.uint8)
+        out_img = cv.normalize(lap_abs, None, 0, 255, cv.NORM_MINMAX).astype(np.uint8)
 
         print(f"[apply_laplacian_detector] Time: {time.time() - start_time:.6f}s")
-        return out
+        return out_img
 
     except Exception as e:
         raise RuntimeError(f"[apply_laplacian_detector] {e}") from e

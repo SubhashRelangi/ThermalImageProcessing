@@ -318,14 +318,14 @@ def apply_unsharp_masking(
     # OUTPUT TYPE
     # -------------------------------------------------
     if output_dtype == np.uint8:
-        out = sharpened.astype(np.uint8)
+        out_img = sharpened.astype(np.uint8)
     elif output_dtype == np.uint16:
-        out = (sharpened * 257).astype(np.uint16)
+        out_img = (sharpened * 257).astype(np.uint16)
     elif output_dtype is None:
-        out = sharpened
+        out_img = sharpened
     else:
-        out = sharpened.astype(output_dtype)
+        out_img = sharpened.astype(output_dtype)
 
     print(f"[USM] Time: {time.perf_counter() - start:.4f}s")
-    return out
+    return out_img
 

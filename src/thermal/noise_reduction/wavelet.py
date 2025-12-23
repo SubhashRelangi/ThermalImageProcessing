@@ -267,11 +267,11 @@ def wavelet_denoise_thermal(
         # -------- Restore dtype --------
         if preserve_dtype:
             if orig_dtype == np.uint16:
-                out = (den_f * 65535).clip(0, 65535).astype(np.uint16)
+                out_img = (den_f * 65535).clip(0, 65535).astype(np.uint16)
             else:
-                out = (den_f * 255).clip(0, 255).astype(np.uint8)
+                out_img = (den_f * 255).clip(0, 255).astype(np.uint8)
         else:
-            out = den_f.astype(np.float32)
+            out_img = den_f.astype(np.float32)
 
     except Exception as e:
         raise RuntimeError(f"[Wavelet Denoising Failed] {e}") from e
@@ -280,5 +280,5 @@ def wavelet_denoise_thermal(
         elapsed = time.perf_counter() - start
         print(f"[Wavelet Denoise] Time: {elapsed:.4f}s")
 
-    return out
+    return out_img
 

@@ -108,7 +108,8 @@ def thermal_flip(
     ):
         raise TypeError(f"Unsupported dtype {img.dtype}")
 
-    return cv2.flip(img, flip_code)
+    out_img = cv2.flip(img, flip_code)
+    return out_img
 
 
 # =====================================================
@@ -237,13 +238,14 @@ def thermal_rotate(
 
     M = cv2.getRotationMatrix2D(center, float(angle), float(scale))
 
-    return cv2.warpAffine(
+    out_img = cv2.warpAffine(
         img,
         M,
         (w, h),
         flags=interpolation,
         borderMode=border_mode
     )
+    return out_img
 
 
 # =====================================================
